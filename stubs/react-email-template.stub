@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { Html, Button, Hr, Text } from "@react-email/components";
+
+function {{ functionName }}() {
+  return (
+    <Html lang="en">
+      <Text>A new email</Text>
+      <Hr />
+      <Button href="https://example.com">Click me</Button>
+    </Html>
+  );
+}
+
+export default {{ functionName }};
