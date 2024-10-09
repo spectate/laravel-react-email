@@ -101,14 +101,3 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-// todo
-
-```bash
-
-    "post-install-cmd": [
-      "@php artisan react-email:build"
-    ],
-    
-    npm i -D @react-email/components @react-email/render tsx typescript react-email @types/react @types/node
-```
