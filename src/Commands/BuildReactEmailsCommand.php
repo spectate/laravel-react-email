@@ -40,7 +40,11 @@ class BuildReactEmailsCommand extends Command
 
     protected function getTemplates(): array
     {
-        return File::files($this->builder->getTemplatePath());
+        $templatePath = $this->builder->getTemplatePath();
+
+        File::makeDirectory($templatePath, 0755, true, true);
+
+        return File::files($templatePath);
     }
 
     protected function buildTemplates(array $templates): array
