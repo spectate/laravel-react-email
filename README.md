@@ -24,7 +24,7 @@ npm i -D @react-email/components @react-email/render typescript react-email @typ
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-react-email-config"
+php artisan vendor:publish --tag="react-email-config"
 ```
 
 ### Optional: Build templates on composer install
