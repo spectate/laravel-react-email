@@ -17,6 +17,11 @@ return [
      */
     'blade_output_path' => resource_path('views/vendor/react-email'),
 
-    'enable_hot_reload' => env('REACT_EMAIL_HOT_RELOAD', app()->isLocal()),
+    /**
+     * Enable hot reloading.
+     *
+     * Defaults to `APP_DEBUG` env var.
+     */
+    'enable_hot_reload' => env('REACT_EMAIL_HOT_RELOAD', env('APP_DEBUG', false)),
 
 ];
