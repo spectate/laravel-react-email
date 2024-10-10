@@ -20,6 +20,7 @@ class ReactEmailServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-react-email')
             ->hasConfigFile()
+            ->hasViews()
             ->hasCommands([
                 MakeReactEmailCommand::class,
                 BuildReactEmailsCommand::class,
