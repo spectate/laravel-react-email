@@ -23,8 +23,22 @@ async function renderEmailTemplate(template: string) {
             pretty: true,
         });
 
-        const plainText = await render(<EmailComponent/>, {
+        const variables: string[] = [];
+        html.replace(/\$\$(\w+)\$\$/g, (match, variable) => {
+            if (!variables.includes(variable)) {
+                variables.push(variable);
+            }
+            return match;
+        });
+
+        let plainText = await render(<EmailComponent/>, {
             plainText: true,
+        });
+
+        variables.forEach(variable => {
+            const uppercaseVar = variable.toUpperCase();
+            const regex = new RegExp(`\\$${uppercaseVar}\\$`, 'g');
+            plainText = plainText.replace(regex, `$$${variable}$$`);
         });
 
         // Replace $$vars$$ with Laravel Blade variables
