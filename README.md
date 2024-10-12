@@ -18,7 +18,7 @@ composer require spectate/laravel-react-email
 Next up, install the required NPM packages:
 
 ```bash
-npm i -D @react-email/components @react-email/render typescript react-email @types/react @types/node
+npm i -D typescript react react-email @react-email/components @react-email/render @types/react @types/node
 ```
 
 You can publish the config file with:
@@ -60,6 +60,26 @@ php artisan react-email:dev
 This will start the dev server and watch for changes in your templates.
 
 Next up, edit the files in `resources/views/react-emails` and see the changes in your browser.
+
+### Using variables
+
+To support variables in the compiled Blade templates, you can use the following syntax in your React Email templates:
+
+```tsx
+export default function MyEmail() {
+    return (
+        <Html>
+            Hello, $$name$$!
+        </Html>
+    );
+}
+```
+
+This will be compiled to the following Blade template:
+
+```blade
+Hello, {{ $name }}!
+```
 
 ### Hot reloading
 
